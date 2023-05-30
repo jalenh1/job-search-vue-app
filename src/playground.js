@@ -1,7 +1,7 @@
-const numbers = [1, 2, 3, 4, 5]
+const interval = setInterval(() => {
+  console.log('running on interval')
+}, 2000)
 
-const squared = numbers.map((number) => {
-  return number * number
-})
-
-console.log(squared)
+setTimeout(() => {
+  clearInterval(interval)
+}, 10000)
