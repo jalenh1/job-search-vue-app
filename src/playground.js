@@ -1,14 +1,9 @@
-const axios = require('axios')
+const numbers = new Set()
 
-const url = 'http://localhost:3000/jobs'
+numbers.add(5)
+numbers.add(10)
+numbers.add(15)
 
-const fetchJobsv1 = () => {
-  axios.get(url).then((response) => {
-    console.log(response.data)
-  })
-}
+numbers.add(5)
 
-const fetchJobsv2 = async () => {
-  const response = await axios.get(url)
-  console.log(response.data)
-}
+console.log(numbers)
