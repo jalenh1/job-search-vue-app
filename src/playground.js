@@ -1,11 +1,9 @@
-const numbers = [1, 2, 2, 3, 4, 2, 5];
+const { toRefs, reactive } = require("vue");
 
-console.log(numbers.filter((value) => value > 2));
+const person = {
+  firstName: "Boris",
+  lastName: "Paskhaver",
+};
 
-const jobs = [
-  { title: "Angular Developer", organization: "Microsoft" },
-  { title: "Programmer", organization: "Google" },
-  { title: "Developer", organization: "Microsoft" },
-];
-
-console.log(jobs.filter((job) => job.organization === "Microsoft"));
+const refPerson = toRefs(reactive(person));
+console.log(refPerson);
