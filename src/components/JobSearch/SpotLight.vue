@@ -11,20 +11,20 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  name: 'SpotLight',
+  name: "SpotLight",
   data() {
     return {
-      spotlights: []
-    }
+      spotlights: [],
+    };
   },
   async mounted() {
-    const baseUrl = import.meta.env.VITE_APP_API_URL
-    const url = `${baseUrl}/spotlights`
-    const response = await axios.get(url)
-    this.spotlights = response.data
-  }
-}
+    const baseUrl = import.meta.env.VITE_APP_API_URL;
+    const url = `${baseUrl}/spotlights`;
+    const response = await axios.get(url);
+    this.spotlights = response.data;
+  },
+};
 </script>

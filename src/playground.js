@@ -1,9 +1,11 @@
-const numbers = new Set()
+const numbers = [1, 2, 2, 3, 4, 2, 5];
 
-numbers.add(5)
-numbers.add(10)
-numbers.add(15)
+console.log(numbers.filter((value) => value > 2));
 
-numbers.add(5)
+const jobs = [
+  { title: "Angular Developer", organization: "Microsoft" },
+  { title: "Programmer", organization: "Google" },
+  { title: "Developer", organization: "Microsoft" },
+];
 
-console.log(numbers)
+console.log(jobs.filter((job) => job.organization === "Microsoft"));

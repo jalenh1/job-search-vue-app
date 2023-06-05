@@ -3,7 +3,11 @@
     <div class="mt-5">
       <fieldset>
         <ul class="flex flex-row flex-wrap">
-          <li v-for="organization in UNIQUE_ORGANIZATIONS" :key="organization" class="h-8 w-1/2">
+          <li
+            v-for="organization in UNIQUE_ORGANIZATIONS"
+            :key="organization"
+            class="h-8 w-1/2"
+          >
             <input
               :id="organization"
               v-model="selectedOrganizations"
@@ -21,29 +25,29 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'pinia'
-import { useJobsStore, UNIQUE_ORGANIZATIONS } from '@/stores/jobs'
-import { useUserStore, ADD_SELECTED_ORGANIZATIONS } from '@/stores/user'
-import CollapsibleAccordion from '@/components/Shared/CollapsibleAccordion.vue'
+import { mapActions, mapState } from "pinia";
+
+import { useJobsStore, UNIQUE_ORGANIZATIONS } from "@/stores/jobs";
+import { useUserStore, ADD_SELECTED_ORGANIZATIONS } from "@/stores/user";
+
+import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
 
 export default {
-  name: 'JobFiltersSidebarOrganizations',
-  components: {
-    CollapsibleAccordion
-  },
+  name: "JobFiltersSidebarOrganizations",
+  components: { CollapsibleAccordion },
   data() {
     return {
-      selectedOrganizations: []
-    }
+      selectedOrganizations: [],
+    };
   },
   computed: {
-    ...mapState(useJobsStore, [UNIQUE_ORGANIZATIONS])
+    ...mapState(useJobsStore, [UNIQUE_ORGANIZATIONS]),
   },
   methods: {
     ...mapActions(useUserStore, [ADD_SELECTED_ORGANIZATIONS]),
     selectOrganization() {
-      this.ADD_SELECTED_ORGANIZATIONS(this.selectOrganization)
-    }
-  }
-}
+      this.ADD_SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+    },
+  },
+};
 </script>

@@ -6,27 +6,29 @@
 
 <script>
 export default {
-  name: 'ActionButton',
+  name: "ActionButton",
   props: {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
       required: false,
-      default: 'primary',
+      default: "primary",
       validator(value) {
-        return ['primary', 'secondary'].includes(value)
-      }
-    }
+        return ["primary", "secondary"].includes(value);
+      },
+    },
   },
   computed: {
     buttonClass() {
-      return { [this.type]: true }
-    }
-  }
-}
+      return {
+        [this.type]: true,
+      };
+    },
+  },
+};
 </script>
 
 <style scoped>
