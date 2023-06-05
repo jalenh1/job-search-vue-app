@@ -33,11 +33,18 @@ import { useUserStore } from "@/stores/user";
 
 import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
 
-const selectedJobTypes = ref([]);
+const props = defineProps({
+  header: {
+    type: String,
+    required: true,
+  },
+  uniqueValues: {},
+});
 
-const jobsStore = useJobsStore();
+const selectedValues = ref([]);
 
-const UNIQUE_JOB_TYPES = computed(() => jobsStore.UNIQUE_JOB_TYPES);
+// const jobsStore = useJobsStore();
+// const UNIQUE_JOB_TYPES = computed(() => jobsStore.UNIQUE_JOB_TYPES);
 
 const userStore = useUserStore();
 const router = useRouter();
