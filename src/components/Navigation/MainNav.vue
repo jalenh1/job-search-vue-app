@@ -7,7 +7,7 @@
         <router-link
           :to="{ name: 'Home' }"
           class="flex h-full items-center text-xl"
-          >Bobo Careers
+          >Honey Jobs
         </router-link>
 
         <nav class="ml-12 h-full">
